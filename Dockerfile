@@ -37,6 +37,9 @@ RUN apt-get update && \
 
 COPY --from=downloader --chown=www-data:www-data /tmp/agendav /var/www/agendav
 
+COPY patches/navbar.patch /tmp/navbar.patch
+RUN patch /var/www/agendav/web/templates/parts/navbar.html /tmp/navbar.patch
+
 COPY agendav.conf /etc/apache2/sites-available/agendav.conf
 COPY settings.php /var/www/agendav/web/config/settings.php
 COPY run.sh /usr/local/bin/run.sh
