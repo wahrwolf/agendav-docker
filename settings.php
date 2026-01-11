@@ -35,10 +35,12 @@ $app['defaults.time.format'] = '24';
  * - dmy: dd-mm-YYYY
  * - mdy: mm-dd-YYYY
  */
-$app['defaults.date_format'] = 'ymd';
+$app['defaults.date_format'] = 'dmy';
 // Default first day of week. Options: 0 (Sunday), 1 (Monday)
 $app['defaults.weekstart'] = 'AGENDAV_WEEKSTART';
 // Logout redirection. Optional
 $app['logout.redirection'] = '';
 // Calendar sharing
 $app['calendar.sharing'] = true;
+// Veriyf SSL/TLS certificate chain
+$app['caldav.certificate.verify'] = AGENDAV_CALDAV_VERIFY;
